@@ -41,25 +41,49 @@ void main() {
 
   ///////////////////////////////
 
-  List<int> scores = [50, 75, 20, 99];
+  // List<int> scores = [50, 75, 20, 99];
 
-  scores[0] = 25;
-  print(scores[0]);
+  // scores[0] = 25;
+  // print(scores[0]);
 
-  scores.add(100);
-  // scores.remove(20);
-  // scores.removeLast();
-  // scores.shuffle();
+  // scores.add(100);
+  // // scores.remove(20);
+  // // scores.removeLast();
+  // // scores.shuffle();
 
-  print(scores.indexOf(99));
+  // print(scores.indexOf(99));
 
-  Set<String> names = {"boody", "luigi", "name2"};
-  names.add("Boody2");
-  names.add("peach");
-  names.remove("luigi");
+  // Set<String> names = {"boody", "luigi", "name2"};
+  // names.add("Boody2");
+  // names.add("peach");
+  // names.remove("luigi");
 
-  print(names);
-  print(names.length);
+  // print(names);
+  // print(names.length);
+
+  ///////////////////////////////
+
+  List<int> scores = [50, 75, 20, 99, 100, 30];
+
+  for (int i = 0; i < 5; i++) {
+    print("the current value of i is $i");
+  }
+
+  for (int score in scores) {
+    print("the score is $score");
+  }
+
+  for (int score in scores) {
+    if (score > 50) {
+      print("the score is $score");
+    } else {
+      print("score not hight enough");
+    }
+  }
+
+  for (int score in scores.where((s) => s < 50)) {
+    print("the score is $score");
+  }
 }
 
 // String greet({required String name, required int age}) {
