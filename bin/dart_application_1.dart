@@ -1,6 +1,16 @@
-import 'package:dart_application_1/dart_application_1.dart'
-    as dart_application_1;
+void main() {
+  var name = "Abdelrahman Atef";
+  print(name);
 
-void main(List<String> arguments) {
-  print('Hello world dffas: ${dart_application_1.calculate()}!');
+  final age = 21;
+  print(age);
+
+  print(age - 10);
+  print(age * 10);
+  print(age + 10);
+
+  const isOpen = true;
+  print(isOpen);
+
+  print("My name is $name an my age is $age");
 }
