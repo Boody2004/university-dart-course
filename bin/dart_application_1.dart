@@ -36,10 +36,32 @@ void main() {
 
   ///////////////////////////////
 
-  final greeting = greet(name: "Abdelrahman", age: 21);
-  print(greeting);
+  // final greeting = greet(name: "Abdelrahman", age: 21);
+  // print(greeting);
+
+  ///////////////////////////////
+
+  List<int> scores = [50, 75, 20, 99];
+
+  scores[0] = 25;
+  print(scores[0]);
+
+  scores.add(100);
+  // scores.remove(20);
+  // scores.removeLast();
+  // scores.shuffle();
+
+  print(scores.indexOf(99));
+
+  Set<String> names = {"boody", "luigi", "name2"};
+  names.add("Boody2");
+  names.add("peach");
+  names.remove("luigi");
+
+  print(names);
+  print(names.length);
 }
 
-String greet({required String name, required int age}) {
-  return " Hi, my name is $name and I am $age";
-}
+// String greet({required String name, required int age}) {
+//   return " Hi, my name is $name and I am $age";
+// }
