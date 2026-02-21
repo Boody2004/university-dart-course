@@ -14,18 +14,32 @@ void main() {
 
   // print("My name is $name an my age is $age");
 
-  const String name = "Boody";
-  print(name);
+  ///////////////////////////////
 
-  int age = 21;
-  age = 25;
-  print(age);
+  // const String name = "Boody";
+  // print(name);
 
-  bool isOpen = true;
-  isOpen = false;
-  print(isOpen);
+  // int age = 21;
+  // age = 25;
+  // print(age);
 
-  double averageRating = 7;
-  averageRating = 7.9;
-  print(averageRating);
+  // bool isOpen = true;
+  // isOpen = false;
+  // print(isOpen);
+
+  // double averageRating = 7;
+  // averageRating = 7.9;
+  // print(averageRating);
+
+  // int? points;
+  // print(points);
+
+  ///////////////////////////////
+
+  final greeting = greet(name: "Abdelrahman", age: 21);
+  print(greeting);
+}
+
+String greet({required String name, required int age}) {
+  return " Hi, my name is $name and I am $age";
 }
