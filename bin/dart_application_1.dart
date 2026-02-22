@@ -105,9 +105,10 @@ void main() {
 
   var noodles = MenuItem('veg noodels', 9.99);
   var pizza = Pizza(["mushrooms", "peppers"], "volcano pizza", 15.99);
+  var roast = MenuItem("veggie roast dinner", 12.49);
+  var kebab = MenuItem("plant kebab", 7.49);
 
-  print(noodles.format());
-  print(pizza.format());
+  print("$noodles, $pizza, $roast, $kebab");
 }
 
 // String greet({required String name, required int age}) {
@@ -123,10 +124,31 @@ class MenuItem {
   String format() {
     return "$title --> $price";
   }
+
+  @override
+  String toString() {
+    return format();
+  }
 }
 
 class Pizza extends MenuItem {
   List<String> toppings;
 
   Pizza(this.toppings, super.title, super.price);
+
+  @override
+  String format() {
+    var formattedToppings = "Contains:";
+
+    for (final t in toppings) {
+      formattedToppings = "$formattedToppings $t";
+    }
+
+    return "$title -> €$price \n$formattedToppings";
+  }
+
+  @override
+  String toString() {
+    return "Instance of Pizza: $title, $price, $toppings";
+  }
 }
