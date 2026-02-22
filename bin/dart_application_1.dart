@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   // var name = "Abdelrahman Atef";
   // print(name);
@@ -109,6 +111,16 @@ void main() {
   var kebab = MenuItem("plant kebab", 7.49);
 
   print("$noodles, $pizza, $roast, $kebab");
+
+  var foods = Collection<MenuItem>("Menu Items", [
+    noodles,
+    pizza,
+    roast,
+    kebab,
+  ]);
+
+  var random = foods.randomItem();
+  print(random);
 }
 
 // String greet({required String name, required int age}) {
@@ -150,5 +162,18 @@ class Pizza extends MenuItem {
   @override
   String toString() {
     return "Instance of Pizza: $title, $price, $toppings";
+  }
+}
+
+class Collection<T> {
+  String name;
+  List<T> data;
+
+  Collection(this.name, this.data);
+
+  T randomItem() {
+    data.shuffle();
+
+    return data[0];
   }
 }
