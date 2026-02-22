@@ -1,6 +1,6 @@
 import 'dart:math';
 
-void main() {
+void main() async {
   // var name = "Abdelrahman Atef";
   // print(name);
 
@@ -105,75 +105,99 @@ void main() {
 
   ///////////////////////////////
 
-  var noodles = MenuItem('veg noodels', 9.99);
-  var pizza = Pizza(["mushrooms", "peppers"], "volcano pizza", 15.99);
-  var roast = MenuItem("veggie roast dinner", 12.49);
-  var kebab = MenuItem("plant kebab", 7.49);
+  // var noodles = MenuItem('veg noodels', 9.99);
+  // var pizza = Pizza(["mushrooms", "peppers"], "volcano pizza", 15.99);
+  // var roast = MenuItem("veggie roast dinner", 12.49);
+  // var kebab = MenuItem("plant kebab", 7.49);
 
-  print("$noodles, $pizza, $roast, $kebab");
+  // print("$noodles, $pizza, $roast, $kebab");
 
-  var foods = Collection<MenuItem>("Menu Items", [
-    noodles,
-    pizza,
-    roast,
-    kebab,
-  ]);
+  // var foods = Collection<MenuItem>("Menu Items", [
+  //   noodles,
+  //   pizza,
+  //   roast,
+  //   kebab,
+  // ]);
 
-  var random = foods.randomItem();
-  print(random);
+  // var random = foods.randomItem();
+  // print(random);
+
+  ///////////////////////////////
+
+  final post = await fetchPost();
+  print(post.title);
+  print(post.userId);
 }
 
 // String greet({required String name, required int age}) {
 //   return " Hi, my name is $name and I am $age";
 // }
 
-class MenuItem {
+///////////////////////////////
+
+// class MenuItem {
+//   String title;
+//   double price;
+
+//   MenuItem(this.title, this.price);
+
+//   String format() {
+//     return "$title --> $price";
+//   }
+
+//   @override
+//   String toString() {
+//     return format();
+//   }
+// }
+
+// class Pizza extends MenuItem {
+//   List<String> toppings;
+
+//   Pizza(this.toppings, super.title, super.price);
+
+//   @override
+//   String format() {
+//     var formattedToppings = "Contains:";
+
+//     for (final t in toppings) {
+//       formattedToppings = "$formattedToppings $t";
+//     }
+
+//     return "$title -> €$price \n$formattedToppings";
+//   }
+
+//   @override
+//   String toString() {
+//     return "Instance of Pizza: $title, $price, $toppings";
+//   }
+// }
+
+// class Collection<T> {
+//   String name;
+//   List<T> data;
+
+//   Collection(this.name, this.data);
+
+//   T randomItem() {
+//     data.shuffle();
+//     return data[0];
+//   }
+// }
+
+///////////////////////////////
+
+Future<Post> fetchPost() {
+  const delay = Duration(seconds: 3);
+
+  return Future.delayed(delay, () {
+    return Post('my post', 123);
+  });
+}
+
+class Post {
   String title;
-  double price;
+  int userId;
 
-  MenuItem(this.title, this.price);
-
-  String format() {
-    return "$title --> $price";
-  }
-
-  @override
-  String toString() {
-    return format();
-  }
-}
-
-class Pizza extends MenuItem {
-  List<String> toppings;
-
-  Pizza(this.toppings, super.title, super.price);
-
-  @override
-  String format() {
-    var formattedToppings = "Contains:";
-
-    for (final t in toppings) {
-      formattedToppings = "$formattedToppings $t";
-    }
-
-    return "$title -> €$price \n$formattedToppings";
-  }
-
-  @override
-  String toString() {
-    return "Instance of Pizza: $title, $price, $toppings";
-  }
-}
-
-class Collection<T> {
-  String name;
-  List<T> data;
-
-  Collection(this.name, this.data);
-
-  T randomItem() {
-    data.shuffle();
-
-    return data[0];
-  }
+  Post(this.title, this.userId);
 }
