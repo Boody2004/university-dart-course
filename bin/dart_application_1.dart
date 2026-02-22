@@ -63,27 +63,43 @@ void main() {
 
   ///////////////////////////////
 
-  List<int> scores = [50, 75, 20, 99, 100, 30];
+  // List<int> scores = [50, 75, 20, 99, 100, 30];
 
-  for (int i = 0; i < 5; i++) {
-    print("the current value of i is $i");
-  }
+  // for (int i = 0; i < 5; i++) {
+  //   print("the current value of i is $i");
+  // }
 
-  for (int score in scores) {
-    print("the score is $score");
-  }
+  // for (int score in scores) {
+  //   print("the score is $score");
+  // }
 
-  for (int score in scores) {
-    if (score > 50) {
-      print("the score is $score");
-    } else {
-      print("score not hight enough");
-    }
-  }
+  // for (int score in scores) {
+  //   if (score > 50) {
+  //     print("the score is $score");
+  //   } else {
+  //     print("score not hight enough");
+  //   }
+  // }
 
-  for (int score in scores.where((s) => s < 50)) {
-    print("the score is $score");
-  }
+  // for (int score in scores.where((s) => s < 50)) {
+  //   print("the score is $score");
+  // }
+
+  ///////////////////////////////
+
+  Map<String, String> planets = {
+    "first": "mercury",
+    "second": "venus",
+    "third": "earth",
+    "fourth": "mars",
+    "fifth": "jupiter",
+  };
+
+  planets["sixth"] = "uranus";
+  print(planets.remove("earth"));
+  print(planets.containsValue("earth"));
+
+  print(planets);
 }
 
 // String greet({required String name, required int age}) {
