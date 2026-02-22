@@ -87,21 +87,46 @@ void main() {
 
   ///////////////////////////////
 
-  Map<String, String> planets = {
-    "first": "mercury",
-    "second": "venus",
-    "third": "earth",
-    "fourth": "mars",
-    "fifth": "jupiter",
-  };
+  // Map<String, String> planets = {
+  //   "first": "mercury",
+  //   "second": "venus",
+  //   "third": "earth",
+  //   "fourth": "mars",
+  //   "fifth": "jupiter",
+  // };
 
-  planets["sixth"] = "uranus";
-  print(planets.remove("earth"));
-  print(planets.containsValue("earth"));
+  // planets["sixth"] = "uranus";
+  // print(planets.remove("earth"));
+  // print(planets.containsValue("earth"));
 
-  print(planets);
+  // print(planets);
+
+  ///////////////////////////////
+
+  var noodles = MenuItem('veg noodels', 9.99);
+  var pizza = Pizza(["mushrooms", "peppers"], "volcano pizza", 15.99);
+
+  print(noodles.format());
+  print(pizza.format());
 }
 
 // String greet({required String name, required int age}) {
 //   return " Hi, my name is $name and I am $age";
 // }
+
+class MenuItem {
+  String title;
+  double price;
+
+  MenuItem(this.title, this.price);
+
+  String format() {
+    return "$title --> $price";
+  }
+}
+
+class Pizza extends MenuItem {
+  List<String> toppings;
+
+  Pizza(this.toppings, super.title, super.price);
+}
