@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:http/http.dart' as http;
 
 void main() async {
   // var name = "Abdelrahman Atef";
@@ -124,9 +125,7 @@ void main() async {
 
   ///////////////////////////////
 
-  final post = await fetchPost();
-  print(post.title);
-  print(post.userId);
+  fetchPost();
 }
 
 // String greet({required String name, required int age}) {
@@ -187,12 +186,12 @@ void main() async {
 
 ///////////////////////////////
 
-Future<Post> fetchPost() {
-  const delay = Duration(seconds: 3);
+fetchPost() async {
+  var uri = Uri.https('jsonplaceholder.typicode.com', '/posts/1');
 
-  return Future.delayed(delay, () {
-    return Post('my post', 123);
-  });
+  final response = await http.get(uri);
+
+  print(response.body);
 }
 
 class Post {
